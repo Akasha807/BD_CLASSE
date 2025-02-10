@@ -45,10 +45,6 @@ add constraint fk_rep_pelicula forgein key(pelicula_id) references pelicula(id);
 
 -- Problema 9
 
-
- 
-
- 
 -- https://pastebin.com/Cj2gvJYd
 
 -- Problemes 11 al 16
