@@ -42,6 +42,7 @@ values (1,'Matrix',1998,7.1,6400);
 
 -- Problema 3
 -- Poner en una 2 valores 
+-- Da fallos 
 insert into pelicula values
     (2,'Matrix',1998,7.1,6400)
     (3,'Constantine',2005,6.5,2000);

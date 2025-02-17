@@ -33,6 +33,5 @@ create table estudiant (
   constraint fk_estudiant_casa foreign key (casa_id) references casa(id)
 )engine=innodb;
 
-select concat('Hola! Soy', nom , ',k ase?') saludo from profe;
-
-select concat('Hola Soy ', upper nom , ',k ase?') saludo from profe;
+ select concat('Hola! Soy', nom , ',k ase?') saludo from profe;
+ select concat('Hola Soy ', upper nom , ',k ase?') saludo from profe;

@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS `reparto`;
 DROP TABLE IF EXISTS `actor`;
 DROP TABLE IF EXISTS `pelicula`;
@@ -35,13 +34,21 @@ CREATE TABLE `reparto` (
 select * from pelicula where vots>1000;
 
 -- problema 2
+select * from pelicula where vots>500 and vots<600;
+select * from pelicula where vots between 500 and 600;
 
-
--- problema 3
+-- problema 3 
 select * from pelicula
-where vots between 5000 and 6000;
+where puntuacio > 9.4 or vots between 8000 i 9000;
+
+select * from pelicula 
+where puntuacio > 9.4 or vots > 8000 and vots < 9000;
+
 -- problema 4
 select * from where anyo >= 1990 and anyo <= 2000 and puntuacio > 9.4 or vots >= 8000 and vots <= 9000;
+
+-- problema 5
+select * from actor where nom like 'Sean Connery';
 
 -- Para ver los nulls 
 -- Debemos poner el comando is null (select * from id is NULL)
@@ -54,7 +61,6 @@ select * from where anyo >= 1990 and anyo <= 2000 and puntuacio > 9.4 or vots >=
 -- Si no ponemos nada es creciente 
 -- 
 -- En caso en concat este null todo sera null
-
 select nom from porfe + char.length('Hola Soy' + nom);
 
 -- problema 6
