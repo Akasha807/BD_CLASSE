@@ -1,44 +1,4 @@
---
--- Table structure for table `atribut`
---
-
-DROP TABLE IF EXISTS `atribut`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `atribut` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nom_atribut` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `atribut`
---
-
-LOCK TABLES `atribut` WRITE;
-/*!40000 ALTER TABLE `atribut` DISABLE KEYS */;
-INSERT INTO `atribut` VALUES (1,'Intel·ligència'),(2,'Força'),(3,'Velocitat'),(4,'Durabilitat'),(5,'Poder'),(6,'Combat');
-/*!40000 ALTER TABLE `atribut` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `atribut_heroi`
---
-
-DROP TABLE IF EXISTS `atribut_heroi`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `atribut_heroi` (
-  `heroi_id` int DEFAULT NULL,
-  `atribut_id` int DEFAULT NULL,
-  `valor` int DEFAULT NULL,
-  KEY `fk_aha_at` (`atribut_id`),
-  KEY `fk_aha_heroi` (`heroi_id`),
-  CONSTRAINT `fk_aha_at` FOREIGN KEY (`atribut_id`) REFERENCES `atribut` (`id`),
-  CONSTRAINT `fk_aha_heroi` FOREIGN KEY (`heroi_id`) REFERENCES `superheroi` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
+-- Database superhereos
 -- problema 1
 select nom_poder from superpoder order by nom_poder ASC;
 
@@ -103,3 +63,11 @@ select nom_superheroi,nom_editorial from superheroi,editorial where superheroi.i
 -- que tengas los ojos azul
 select nom_superheroi,color from superheroi,color where superheroi.id=id_color_ulls and color like '%blau%';
 
+-- problema 23
+select nom_superheroi,color from superheroi,colo where id_color_ulls.id=nom_superheroi.id 
+and color like '%blau';
+
+-- problema 24 
+select nom_superheroi,nom_atribut from superheroi,atribut,atribut_heroi
+where atribut_heroi.heroi_id=superheroi.id and atribut_heroi.atribut_id=atribut.id
+and nom_atribut like '%intel.ligència%';

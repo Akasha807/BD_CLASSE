@@ -33,5 +33,14 @@ create table estudiant (
   constraint fk_estudiant_casa foreign key (casa_id) references casa(id)
 )engine=innodb;
 
+-- Mostra el nom de la classe amb el nom del professor/a que la imparteix
+select estudiant.nom,profe.nom from estudiant,profe where profe.casa_id=estudiant.id;
+
+-- Mostra el nom de la classe amb el nom del professor/a
+-- que la imparteix i el nom de la casa a la que pertany el professor/a
+
+select profe.nom,estudiant.nom,casa.nom from estudiant,profe,casa where profe.casa_id=estudiant.id 
+and profe.casa_id=casa.id;
+
  select concat('Hola! Soy', nom , ',k ase?') saludo from profe;
  select concat('Hola Soy ', upper nom , ',k ase?') saludo from profe;

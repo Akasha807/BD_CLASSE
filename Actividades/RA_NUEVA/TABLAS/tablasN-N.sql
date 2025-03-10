@@ -26,7 +26,4 @@ insert into asignatura values (484, 'BBDD');
 insert into fer values ('11111A', 484);
 insert into alumne values('2AAAAB','Set');
 insert into asignatura values(798,'English');
--- da fallos 
-insert into alumne values('11111B','Jordi');
--- da fallos 
-insert into fer values('2AAAAB',798);
+
