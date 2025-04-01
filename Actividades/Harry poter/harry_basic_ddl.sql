@@ -44,3 +44,11 @@ and profe.casa_id=casa.id;
 
  select concat('Hola! Soy', nom , ',k ase?') saludo from profe;
  select concat('Hola Soy ', upper nom , ',k ase?') saludo from profe;
+
+ select profe.nom,casa.nom from profe join casa on(profe.casa_id=casa.id);(4)
+ select * from profe;(10)
+
+ select profe.nom,casa.nom from profe left outer join casa on(profe.casa_id=casa.id);
+
+ select profe.nom,casa.nom from profe right outer join casa on(profe.casa_id=casa.id);
+ select profe.nom,coalesce(casa.nom,'Ni idea') from profe left outer join casa on(profe.casa_id=casa.id);
